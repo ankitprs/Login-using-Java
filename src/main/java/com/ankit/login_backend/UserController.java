@@ -2,6 +2,7 @@ package com.ankit.login_backend;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +11,6 @@ import java.util.List;
 @RequestMapping("/api/v1/user")
 public class UserController {
 
-
     private final UserService userService;
 
     @Autowired
@@ -18,29 +18,10 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping()
-    public List<User> getStudent() {
-        return studentService.getStudents();
-    }
-
-    @PostMapping("/sign_up")
-    public String signUp(@RequestBody User user){
-
-    }
-
-
-    @PostMapping("/login")
-    public String login() {
-
-    }
-
-
     @GetMapping("/hello")
-    public String hello(){
-        return "Hello from GreenStitch";
+    public ResponseEntity<String> hello() {
+        return ResponseEntity.ok("Hello from GreenStitch");
     }
-
-
 
 
 }

@@ -26,6 +26,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 	implementation 'com.auth0:java-jwt:4.4.0'
+	implementation "org.mindrot:jbcrypt:0.4"
 }
 
 tasks.named('test') {
